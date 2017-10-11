@@ -37,6 +37,10 @@ a:hover {
     text-decoration: none;
 }
 
+.ui-widget li:nth-child(n+9) {
+    display: none;
+}
+
 footer {
     position: absolute;
     width: 100%;

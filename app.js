@@ -21,6 +21,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, './src/public')));
 
+// app.header("Access-Control-Allow-Origin", "*");
+// app.header("Access-Control-Allow-Headers", "X-Requested-With");
+
 app.use('/', index);
 
 // catch 404 and forward to error handler
