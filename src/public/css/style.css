@@ -37,6 +37,22 @@ a:hover {
     text-decoration: none;
 }
 
+.temple-list {
+    margin-top: 10%;
+}
+
+li {
+    list-style-type: none;
+}
+
+li a {
+    color: inherit;
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
+
 .ui-widget li:nth-child(n+9) {
     display: none;
 }
