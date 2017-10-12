@@ -98,29 +98,6 @@ function get_location_details(location_id) {
 };
 
 
-
-function getName(name) {
-    // var temp_name = name;
-    console.log("Geeting name " + name);
-    // return 'Rajendra Sarovar';
-    return name;
-}
-
-function getImage(image_link) {
-    // return 'https://maps.gstatic.com/mapfiles/place_api/icons/worship_hindu-71.png';
-    return image_link;
-}
-
-function getAddress(address_link) {
-    // return 'Bihar, Sadhnapuri, Sadhapur, Chhapra, Bihar 841301, India';
-    return address_link;
-}
-
-// function getNearByTemples(nearby_link) {
-//     var arr = ["वेंकितापुरम पेरूमल कोइल (SRI करानाराजर सनिधि)", "खाखी महाराज मंदिर", "अप्पा पिथियम स्वामी मंदिर", "शिव मंदिर", "नीलकंठ मंदिर", "इस्क्कों गुरुवायुर", "Swaminarayan mandir", "DADA MAI WALA MANDIR BANKNER", "हनुमान मंदिर", "हनुमान एंड श्री बालाजी मंदिर", "सिथाम्पलम सिवान मंदिर", "झूले लाल मंदिर", "विश्वकर्मा मंदिर", "काली मंदिर", "श्री सिद्धि विनायक गणेश मन्दिर"];
-//     return arr;
-// }
-
 function getNearByLocations(lat, lng, typ) {
     console.log("lat -- >" + lat);
     console.log("lng -- >" + lng);
@@ -143,15 +120,36 @@ function getNearByLocations(lat, lng, typ) {
                 } else {
                     out_result.forEach(function(i) {
                         location_array.push(i.name);
-                        console.log(location_array);
+                        // console.log(location_array);
                     }, this);
-
-
-
+                    getNearByTemples(location_array);
                 }
 
             }
         }
-
     });
+}
+
+
+function getName(name) {
+    // var temp_name = name;
+    console.log("Geeting name " + name);
+    // return 'Rajendra Sarovar';
+    return name;
+}
+
+function getImage(image_link) {
+    // return 'https://maps.gstatic.com/mapfiles/place_api/icons/worship_hindu-71.png';
+    return image_link;
+}
+
+function getAddress(address_link) {
+    // return 'Bihar, Sadhnapuri, Sadhapur, Chhapra, Bihar 841301, India';
+    return address_link;
+}
+
+function getNearByTemples(array_link) {
+    var arr = ["वेंकितापुरम पेरूमल कोइल (SRI करानाराजर सनिधि)", "खाखी महाराज मंदिर", "अप्पा पिथियम स्वामी मंदिर", "शिव मंदिर", "नीलकंठ मंदिर", "इस्क्कों गुरुवायुर", "Swaminarayan mandir", "DADA MAI WALA MANDIR BANKNER", "हनुमान मंदिर", "हनुमान एंड श्री बालाजी मंदिर", "सिथाम्पलम सिवान मंदिर", "झूले लाल मंदिर", "विश्वकर्मा मंदिर", "काली मंदिर", "श्री सिद्धि विनायक गणेश मन्दिर"];
+    console.log(array_link);
+    return arr;
 }
