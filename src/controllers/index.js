@@ -16,37 +16,34 @@ exports.index_post = (req, res) => {
 };
 
 exports.temple_get = (req, res) => {
-    let name,
-        image_link,
-        address_link,
-        nearby_link = [];
+    var x = {};
+    x.name = getName(),
+        x.image_link = getImage(),
+        x.address_link = getAddress(),
+        x.nearby_link = getNearByTemples();
 
+    console.log("abra------->" + getName());
 
     console.log("caling global value -> " + x);
 
-    console.log("Calling from get -- > " + image_link);
+    // console.log("Calling from get -- > " + image_link);
     let location_name = req.params.temple_name;
     console.log("location name --> " + location_name);
     let location_unique_id;
     get_location_id(location_name);
 
     console.log("Calling Image -- > " + getImage());
-
     let location_info = get_location_details(location_unique_id);
     console.log("location_info --> " + location_info);
 
     res.header('Access-Control-Allow-Origin', "*");
     res.render('pages/temple', {
-        name: getName(),
-        image_link: getImage(),
-        address_link: getAddress(),
-        nearby_link: getNearByTemples()
+        data: x
     });
 };
 
 
 function get_location_id(location_name) {
-
     let modified_name = location_name.split(' ').join('+');
     console.log("modified_name -- > " + modified_name);
     // get place id from here
@@ -84,11 +81,13 @@ function get_location_details(location_id) {
                     console.log(" value - " + JSON.stringify(out_result.name));
                     x = out_result;
                     // getTempleDetails(out_result);
-                    getName(JSON.stringify(out_result.name));
-                    getImage(JSON.stringify(out_result.formatted_address));
-                    getAddress(JSON.stringify(out_result.icon));
-                    getNearByLocations(out_result.geometry.location.lat, out_result.geometry.location.lng, out_result.types[0]);
 
+                    setTimeout(function() {
+                        getName(JSON.stringify(out_result.name));
+                        getImage(JSON.stringify(out_result.formatted_address));
+                        getAddress(JSON.stringify(out_result.icon));
+                        getNearByLocations(out_result.geometry.location.lat, out_result.geometry.location.lng, out_result.types[0]);
+                    }, 1000);
                 }
 
             }
@@ -149,7 +148,7 @@ function getAddress(address_link) {
 }
 
 function getNearByTemples(array_link) {
-    var arr = ["वेंकितापुरम पेरूमल कोइल (SRI करानाराजर सनिधि)", "खाखी महाराज मंदिर", "अप्पा पिथियम स्वामी मंदिर", "शिव मंदिर", "नीलकंठ मंदिर", "इस्क्कों गुरुवायुर", "Swaminarayan mandir", "DADA MAI WALA MANDIR BANKNER", "हनुमान मंदिर", "हनुमान एंड श्री बालाजी मंदिर", "सिथाम्पलम सिवान मंदिर", "झूले लाल मंदिर", "विश्वकर्मा मंदिर", "काली मंदिर", "श्री सिद्धि विनायक गणेश मन्दिर"];
+    // var arr = ["वेंकितापुरम पेरूमल कोइल (SRI करानाराजर सनिधि)", "खाखी महाराज मंदिर", "अप्पा पिथियम स्वामी मंदिर", "शिव मंदिर", "नीलकंठ मंदिर", "इस्क्कों गुरुवायुर", "Swaminarayan mandir", "DADA MAI WALA MANDIR BANKNER", "हनुमान मंदिर", "हनुमान एंड श्री बालाजी मंदिर", "सिथाम्पलम सिवान मंदिर", "झूले लाल मंदिर", "विश्वकर्मा मंदिर", "काली मंदिर", "श्री सिद्धि विनायक गणेश मन्दिर"];
     console.log(array_link);
-    return arr;
+    return array_link;
 }

@@ -9,19 +9,19 @@
                     <div class="col-xs-10 col-sm-8 col-md-8 col-lg-12 col-xs-offset-1">
                         <div class="row">
                             <div class="col-sm-6 col-md-4">
-                                <% if (! image_link) { %>
+                                <% if (! data.image_link) { %>
                                     <img src="http://placehold.it/500x500" alt="" class="img-rounded img-responsive" />
                                     <% } else { %>
-                                        <img src="<%= image_link %>" alt="" class="img-rounded img-responsive" />
+                                        <img src="<%= data.image_link %>" alt="" class="img-rounded img-responsive" />
                                         <% } %>
                             </div>
                             <div class="col-sm-6 col-md-8">
                                 <h3>
-                                    <%= name %>
+                                    <%= data.name %>
                                 </h3>
                                 <i class="glyphicon glyphicon-map-marker">
                                         </i>
-                                <span><cite title="<%= address_link %>"> <%= address_link %></cite></span>
+                                <span><cite title="<%= data.address_link %>"> <%= data.address_link %></cite></span>
                                 <p>
 
                             </div>
@@ -29,11 +29,11 @@
                         <div class="row temple-list">
                             <h4>NEARBY TEMPLES</h4>
                             <ul>
-                                <% for(var i=0; i< nearby_link.length; i++) { %>
+                                <% for(var i=0; i< data.nearby_link.length; i++) { %>
                                     <li>
 
                                         <a href="/<%= nearby_link[i] %>">
-                                            <%= nearby_link[i] %>
+                                            <%= data.nearby_link[i] %>
                                         </a>
 
                                     </li>
