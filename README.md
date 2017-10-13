@@ -18,5 +18,4 @@
 <img src="src/public/images/img2.png">
 
 ## Mobile View
-<img src="src/public/images/img1.png">
-<img src="src/public/images/img2.png"
+<img src="src/public/images/img3.png">
