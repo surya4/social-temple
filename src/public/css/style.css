@@ -53,6 +53,16 @@ li a {
     margin: 0 auto;
 }
 
+.ui-helper-hidden-accessible {
+    display: none;
+}
+
+ul.ui-autocomplete.ui-menu {
+    padding-left: 0;
+    margin-left: 0;
+    float: left;
+}
+
 .ui-widget li:nth-child(n+9) {
     display: none;
 }
