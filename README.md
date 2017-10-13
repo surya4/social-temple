@@ -8,9 +8,15 @@
 - **CSS Preprocessor**: css
 
 ### How to Run : 
-npm install
-npm start
+ - npm install
+ - npm start
 
 ### Images
+
+##Web View
 <img src="src/public/images/img1.png">
 <img src="src/public/images/img2.png">
+
+## Mobile View
+<img src="src/public/images/img1.png">
+<img src="src/public/images/img2.png"

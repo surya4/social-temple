@@ -22,7 +22,6 @@ $(document).ready(function() {
         select: function(event, ui) {
             event.preventDefault();
             // $('.input_selected_value').val(ui.item.value);
-            alert("1");
             location.href = "/" + ui.item.value;
 
         },
